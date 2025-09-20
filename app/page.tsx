@@ -419,9 +419,8 @@ export default function FitnessApp() {
                 {[...Array(8)].map((_, i) => (
                   <div
                     key={i}
-                    className={`w-3 h-6 mx-0.5 rounded-full transition-all duration-500 ${
-                      i < waterIntake ? "bg-blue-500" : "bg-slate-200"
-                    }`}
+                    className={`w-3 h-6 mx-0.5 rounded-full transition-all duration-500 ${i < waterIntake ? "bg-blue-500" : "bg-slate-200"
+                      }`}
                   />
                 ))}
               </div>
@@ -533,7 +532,7 @@ export default function FitnessApp() {
 
       <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-slate-200 shadow-lg z-20">
         <div className="max-w-md mx-auto px-2">
-          <div className="flex justify-around py-2">
+          <div className="flex">
             {[
               { id: "home", label: "Главная", icon: "🏠" },
               { id: "register", label: "Регистрация", icon: "👤" },
@@ -546,9 +545,8 @@ export default function FitnessApp() {
               <button
                 key={item.id}
                 onClick={() => handlePageChange(item.id)}
-                className={`flex flex-col items-center py-2 px-1 rounded-lg transition-all duration-200 ${
-                  currentPage === item.id ? "bg-blue-100 text-blue-700" : "text-slate-500 hover:text-slate-700"
-                }`}
+                className={`flex-1 flex flex-col items-center py-2 rounded-lg transition-all duration-200 ${currentPage === item.id ? "bg-blue-100 text-blue-700" : "text-slate-500 hover:text-slate-700"
+                  }`}
               >
                 <div className="w-6 h-6 flex items-center justify-center mb-1">
                   <span className="text-lg">{item.icon}</span>
@@ -841,13 +839,12 @@ export default function FitnessApp() {
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-semibold text-slate-900">{exercise.name}</h3>
                     <span
-                      className={`text-sm px-2 py-1 rounded ${
-                        exercise.difficulty === "Легкий"
+                      className={`text-sm px-2 py-1 rounded ${exercise.difficulty === "Легкий"
                           ? "bg-green-100 text-green-700"
                           : exercise.difficulty === "Средний"
                             ? "bg-yellow-100 text-yellow-700"
                             : "bg-red-100 text-red-700"
-                      }`}
+                        }`}
                     >
                       {exercise.difficulty}
                     </span>
@@ -980,11 +977,10 @@ export default function FitnessApp() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 backdrop-blur-sm border rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                      selectedCategory === category
+                    className={`px-4 py-2 backdrop-blur-sm border rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 ${selectedCategory === category
                         ? "bg-green-500 text-white border-green-500"
                         : "bg-white/80 text-green-700 border-green-200 hover:bg-green-50"
-                    }`}
+                      }`}
                   >
                     {category}
                   </button>
@@ -1095,11 +1091,10 @@ export default function FitnessApp() {
               ].map((achievement, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 hover:scale-105 ${
-                    achievement.unlocked
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 hover:scale-105 ${achievement.unlocked
                       ? "bg-purple-50 border border-purple-200"
                       : "bg-slate-50 border border-slate-200 opacity-60"
-                  }`}
+                    }`}
                 >
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
                     <span className="text-lg">{achievement.icon}</span>
@@ -1201,13 +1196,12 @@ export default function FitnessApp() {
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-semibold text-slate-900">{challenge.title}</h3>
                         <span
-                          className={`text-sm px-2 py-1 rounded ${
-                            challenge.difficulty === "Легкий"
+                          className={`text-sm px-2 py-1 rounded ${challenge.difficulty === "Легкий"
                               ? "bg-green-100 text-green-700"
                               : challenge.difficulty === "Средний"
                                 ? "bg-yellow-100 text-yellow-700"
                                 : "bg-red-100 text-red-700"
-                          }`}
+                            }`}
                         >
                           {challenge.difficulty}
                         </span>
